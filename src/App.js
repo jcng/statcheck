@@ -13,7 +13,10 @@ function App() {
       <div className="champ-hero-splash">
         <img src={champSplash}></img>
       </div>
-      <h1 className="champ-title">{testData.id}</h1>
+      <h1 className="champ-title">{testData.id}, {testData.title}</h1>
+      <div className="champ-stats-wrapper">
+        <div className="champ-stats-hp">HP: {testData.stats.hp}</div>
+      </div>
     </div>
   );
 }
