@@ -1,16 +1,14 @@
 import './App.css';
+import {champData, fetchChampData} from "./utility/DataSource"
 import ChampStats from "./components/ChampStats"
-import {championData} from "./utility/DataSource"
+import ChampSplash from "./components/ChampSplash"
 
-var champSplash = `//ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.name}_0.jpg`
 
 function App() {
   return (
     <div className="App">
-      <div className="champ-hero-splash">
-        <img src={champSplash}></img>
-      </div>
-      <h1 className="champ-title">{championData.id}, {championData.title}</h1>
+      <ChampSplash></ChampSplash>
+      <h1 className="champ-title">{champData.id}, {champData.title}</h1>
       <div className="champ-stats-wrapper">
         <ChampStats stat="hp"></ChampStats>
         <ChampStats stat="hpperlevel"></ChampStats>
