@@ -1,11 +1,8 @@
 import './App.css';
+import ChampStats from "./components/ChampStats"
+import {championData} from "./utility/DataSource"
 
-// local JSON for testing purposes
-var testDataRaw = require('./data/Lucian.json');
-var testData = testDataRaw.data[Object.keys(testDataRaw.data)[0]]
-console.log(testData);
-
-var champSplash = `//ddragon.leagueoflegends.com/cdn/img/champion/splash/${testData.name}_0.jpg`
+var champSplash = `//ddragon.leagueoflegends.com/cdn/img/champion/splash/${championData.name}_0.jpg`
 
 function App() {
   return (
@@ -13,9 +10,27 @@ function App() {
       <div className="champ-hero-splash">
         <img src={champSplash}></img>
       </div>
-      <h1 className="champ-title">{testData.id}, {testData.title}</h1>
+      <h1 className="champ-title">{championData.id}, {championData.title}</h1>
       <div className="champ-stats-wrapper">
-        <div className="champ-stats-hp">HP: {testData.stats.hp}</div>
+        <ChampStats stat="hp"></ChampStats>
+        <ChampStats stat="hpperlevel"></ChampStats>
+        <ChampStats stat="mp"></ChampStats>
+        <ChampStats stat="mpperlevel"></ChampStats>
+        <ChampStats stat="movespeed"></ChampStats>
+        <ChampStats stat="armor"></ChampStats>
+        <ChampStats stat="armorperlevel"></ChampStats>
+        <ChampStats stat="spellblock"></ChampStats>
+        <ChampStats stat="spellblockperlevel"></ChampStats>
+        <ChampStats stat="attackrange"></ChampStats>
+        <ChampStats stat="hpregen"></ChampStats>
+        <ChampStats stat="hpregenperlevel"></ChampStats>
+        <ChampStats stat="mpregenperlevel"></ChampStats>
+        <ChampStats stat="crit"></ChampStats>
+        <ChampStats stat="critperlevel"></ChampStats>
+        <ChampStats stat="attackdamage"></ChampStats>
+        <ChampStats stat="attackdamageperlevel"></ChampStats>
+        <ChampStats stat="attackspeedperlevel"></ChampStats>
+        <ChampStats stat="attackspeed"></ChampStats>
       </div>
     </div>
   );
