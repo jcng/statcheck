@@ -7,7 +7,7 @@
 # Scratchpad
 
 # Next to-do
-* Sort out async call to API for fetchChampData
+* Add abilities to champ overview
 
 ## Structure
 
