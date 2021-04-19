@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ChampStats from './ChampStats'
 import ChampSplash from './ChampSplash'
+import ChampAbility from './ChampAbility'
 import { fetchChampData } from '../utility/DataSource'
 
 class ChampOverview extends Component {
@@ -55,6 +56,7 @@ class ChampOverview extends Component {
                     <ChampStats stat="attackspeedperlevel"></ChampStats>
                     <ChampStats stat="attackspeed"></ChampStats>
                 </div>
+                <ChampAbility abilityData={this.state.champData.spells ? this.state.champData.spells[0] : ""}></ChampAbility>
             </div>
         )
     }
