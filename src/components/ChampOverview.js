@@ -14,7 +14,7 @@ class ChampOverview extends Component {
     }
 
     componentDidMount() {
-        fetchChampData("Lucian").then(
+        fetchChampData("MissFortune").then(
             (result) => {
                 this.setState({
                     isLoaded: true,
@@ -30,10 +30,24 @@ class ChampOverview extends Component {
         )
     }
 
+    // Loop through available ability data and return ChampAbility components in a warpper
+    ChampAbilityWrapper() {
+        if (this.state.champData.spells) {
+            const abilityList = this.state.champData.spells.map((ability) => 
+                <ChampAbility abilityData={ability}></ChampAbility>
+            );
+            return (
+                <div className="champ-abilities-wrapper">
+                    {abilityList}
+                </div>
+            )
+        }
+    }
+
     render() {
         return (
             <div className="champ-overview-wrapper">
-                <ChampSplash champId={this.state.champData.id}></ChampSplash>
+                <ChampSplash champId={this.state.champData.id} altText={this.state.champData.name + " splash art"}></ChampSplash>
                 <h1 className="champ-title">{this.state.champData.id}, {this.state.champData.title}</h1>
                 <div className="champ-stats-wrapper">
                     <ChampStats stat="hp"></ChampStats>
@@ -56,7 +70,7 @@ class ChampOverview extends Component {
                     <ChampStats stat="attackspeedperlevel"></ChampStats>
                     <ChampStats stat="attackspeed"></ChampStats>
                 </div>
-                <ChampAbility abilityData={this.state.champData.spells ? this.state.champData.spells[0] : ""}></ChampAbility>
+                {this.ChampAbilityWrapper()}
             </div>
         )
     }

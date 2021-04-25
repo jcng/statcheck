@@ -6,7 +6,7 @@ class ChampSplash extends Component {
         let champSplash = getChampSplashSrc(this.props.champId)
         return (
             <div className="champ-hero-splash">
-                <img src={champSplash}></img>
+                <img alt={this.props.altText} src={champSplash}></img>
             </div>
         )
     }

@@ -6,9 +6,6 @@
 ---
 # Scratchpad
 
-# Next to-do
-* Add abilities to champ overview
-
 ## Structure
 
 ### Base Stats Overview
