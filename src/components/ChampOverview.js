@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ChampStats from './ChampStats'
 import ChampSplash from './ChampSplash'
 import ChampAbility from './ChampAbility'
-import { fetchChampData } from '../utility/DataSource'
+import { fetchChampDataCDragon } from '../utility/DataSource'
 
 class ChampOverview extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class ChampOverview extends Component {
     }
 
     componentDidMount() {
-        fetchChampData("MissFortune").then(
+        fetchChampDataCDragon("236").then(
             (result) => {
                 this.setState({
                     isLoaded: true,

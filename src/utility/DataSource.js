@@ -20,6 +20,21 @@ async function fetchChampData(champId) {
 export {fetchChampData}
 //  END fetchChampData()
 
+// fetchChampDataCDragon() - API call to fetch champ data JSON USING CDRAGON
+// TODO: Make dynamic -- should be able to pass in champ id and patch number as arguments
+async function fetchChampDataCDragon(champKey) {
+    try {
+        let response = await fetch(`//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/${champKey}.json`);
+        let responseJson =  await response.json();
+        return responseJson;
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
+export {fetchChampDataCDragon}
+//  END fetchChampDataCDragon()
+
 
 // champData - Detailed JSON for each champion
 let champData = testDataRaw.data[Object.keys(testDataRaw.data)[0]]
