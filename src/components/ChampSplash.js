@@ -3,7 +3,7 @@ import {getChampSplashSrc} from "../utility/DataSource"
 
 class ChampSplash extends Component {
     render() {
-        let champSplash = getChampSplashSrc(this.props.champId)
+        let champSplash = getChampSplashSrc(this.props.champName)
         return (
             <div className="champ-hero-splash">
                 <img alt={this.props.altText} src={champSplash}></img>

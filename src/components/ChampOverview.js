@@ -47,8 +47,8 @@ class ChampOverview extends Component {
     render() {
         return (
             <div className="champ-overview-wrapper">
-                <ChampSplash champId={this.state.champData.id} altText={this.state.champData.name + " splash art"}></ChampSplash>
-                <h1 className="champ-title">{this.state.champData.id}, {this.state.champData.title}</h1>
+                <ChampSplash champName={this.state.champData.alias} altText={this.state.champData.name + " splash art"}></ChampSplash>
+                <h1 className="champ-title">{this.state.champData.name}, {this.state.champData.title}</h1>
                 <div className="champ-stats-wrapper">
                     <ChampStats stat="hp"></ChampStats>
                     <ChampStats stat="hpperlevel"></ChampStats>
