@@ -14,7 +14,7 @@ class ChampOverview extends Component {
     }
 
     componentDidMount() {
-        fetchChampDataCDragon("236").then(
+        fetchChampDataCDragon().then(
             (result) => {
                 this.setState({
                     isLoaded: true,
