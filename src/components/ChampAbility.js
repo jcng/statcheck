@@ -6,7 +6,7 @@ class ChampAbility extends Component {
         return (
             <div className="champ-ability-wrapper">
                 ---
-                <img src={ getChampAbilityIcon() }></img>
+                <img src={ getChampAbilityIcon(this.props.abilityData.spellKey) }></img>
                 <div className="champ-ability-name">{this.props.abilityData.name}</div>
                 <div className="champ-ability-toolltip">{this.props.abilityData.tooltip}</div>
             </div>

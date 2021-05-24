@@ -1,7 +1,7 @@
 // Central source for accessing data
 
 // Hardcoded patchNumber for now -- make dynamic later
-let patchNumber = "11.7.1";
+let patchNumber = "11.9.1";
 let champId = "236";
 
 // Default Export - Using static data for now, but will eventually replace with calls to API
@@ -28,7 +28,7 @@ export {fetchChampData}
 // TODO: Make dynamic -- should be able to pass in champ id and patch number as arguments
 async function fetchChampDataCDragon() {
     try {
-        let response = await fetch(`//raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/${champId}.json`);
+        let response = await fetch(`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/${champId}.json`);
         let responseJson =  await response.json();
         return responseJson;
     }
@@ -54,6 +54,7 @@ export { getChampSplashSrc }
 
 // getChampAbilityIcon - Given a champId and abilityKey (e.g. "q", "w", "e"), return the icon
 function getChampAbilityIcon(abilityKey) {
-    return `//cdn.communitydragon.org/${patchNumber}/champion/${champId}/ability-icon/${abilityKey}`
+    //return `//cdn.communitydragon.org/${patchNumber}/champion/${champId}/ability-icon/${abilityKey}`
+    return `https://cdn.communitydragon.org/${patchNumber}/champion/${champId}/ability-icon/${abilityKey}`
 }
 export { getChampAbilityIcon }
