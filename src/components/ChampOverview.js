@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ChampStats from './ChampStats'
 import ChampSplash from './ChampSplash'
 import ChampAbility from './ChampAbility'
-import { fetchChampDataCDragon } from '../utility/DataSource'
+import { fetchChampDataCDragon, fetchChampDataMeraki } from '../utility/DataSource'
 
 class ChampOverview extends Component {
     constructor(props) {
@@ -27,6 +27,13 @@ class ChampOverview extends Component {
                     error
                 });
             }
+        );
+        fetchChampDataMeraki().then(
+            (result => {
+                this.setState({
+                    champDataMeraki: result
+                })
+            })
         )
     }
 

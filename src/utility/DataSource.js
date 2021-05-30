@@ -1,8 +1,9 @@
 // Central source for accessing data
 
 // Hardcoded patchNumber for now -- make dynamic later
-let patchNumber = "11.9.1";
-let champId = "236";
+const patchNumber = "11.9.1";
+const champId = "236";
+const champName = "Lucian"
 
 // Default Export - Using static data for now, but will eventually replace with calls to API
 var testDataRaw = require('../data/Lucian.json');
@@ -38,6 +39,20 @@ async function fetchChampDataCDragon() {
 }
 export {fetchChampDataCDragon}
 //  END fetchChampDataCDragon()
+
+// featchChampDataMeraki() - API call to fetch champ data JSON USING MERAKI (wiki crawler)
+async function fetchChampDataMeraki() {
+    try {
+        let response = await fetch(`https://cors-anywhere.herokuapp.com/https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/champions/${champName}.json`);
+        let responseJson =  await response.json();
+        return responseJson;
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
+export {fetchChampDataMeraki}
+// END fetchChampDataMeraki()
 
 
 // champData - Detailed JSON for each champion
