@@ -2,8 +2,8 @@
 
 // Hardcoded patchNumber for now -- make dynamic later
 const patchNumber = "11.9.1";
-const champId = "236";
-const champName = "Lucian"
+const champId = "236"; // used for CDragon
+const champName = "Lucian" // used for Meraki
 
 // Default Export - Using static data for now, but will eventually replace with calls to API
 var testDataRaw = require('../data/Lucian.json');
