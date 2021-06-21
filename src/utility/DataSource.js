@@ -73,3 +73,4 @@ function getChampAbilityIcon(abilityKey) {
     return `https://cdn.communitydragon.org/${patchNumber}/champion/${champId}/ability-icon/${abilityKey}`
 }
 export { getChampAbilityIcon }
+// END getChampAbilityIcon
