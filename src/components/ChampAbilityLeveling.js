@@ -19,16 +19,22 @@ const LevelingModifier = (props) => {
     if (props.modifier) {
         // base values are at index 0, all values after are ratios
         let modifierString = parseModifiers(props.modifier[0]);
-        let ratioString = parseModifiers(props.modifier[1]);
 
+        let ratioArray = []
+        for (var i = 1; i < props.modifier.length; i++) {
+            ratioArray.push(parseModifiers(props.modifier[i]))
+        }
+        const ratioList = ratioArray.map((ratio) => 
+            <span>(+ {ratio})</span>
+        )
+        
         return(
             <div className="leveling-modifier">
-                {
-                    ratioString ? `${modifierString} + (${ratioString})`
-                        : `${modifierString}`
-                }
+                <span>{modifierString}</span>
+                {ratioList.length > 0 && ratioList}
             </div>
         )
+        
     }
     else {
         return null
