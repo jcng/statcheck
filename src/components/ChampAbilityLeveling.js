@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {homogenousArray} from '../utility/HelperFunctions'
+import {homogenousArray, styleStatColors} from '../utility/HelperFunctions'
 
 // Helper function to convert modifier objects into strings
 // Takes an object with two attributes: values and units
@@ -15,6 +15,8 @@ const parseModifiers = (modObj) => {
     }
 }
 
+// LevelingModifier Component
+// Takes modifiers array and renders leveling modifiers + ratios
 const LevelingModifier = (props) => {
     if (props.modifier) {
         // base values are at index 0, all values after are ratios
